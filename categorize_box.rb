@@ -25,4 +25,4 @@ end
 # Test Driven Development
 puts categorize_box(1000, 35, 700, 300)
 puts categorize_box(200, 50, 800, 50)
-puts categorize_box (1000, 35, 700, 300)
+puts categorize_box(1000, 35, 700, 300)
