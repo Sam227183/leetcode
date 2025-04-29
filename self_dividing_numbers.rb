@@ -7,7 +7,7 @@ def self_dividing_numbers(left, right)
   (left..right).to_a.each do |element|
   # If the number returns true for check_self_divide,
     if check_self_divide(element)
-    # will add that number to the array.
+  # will add that number to the array.
       initial_arr << element
     end
   end
