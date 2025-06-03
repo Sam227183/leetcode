@@ -20,6 +20,7 @@ def find_words(words)
   return final_arr
 end
 
+  # step 4. check each character one by one
 def str_includes?(element, row)
   element.each do |e|
     unless row.include?(e)
