@@ -1,4 +1,4 @@
-
+# https://leetcode.com/problems/goal-parser-interpretation/description/
 def interpret(command)
   return command.gsub("()","o").gsub("(al)","al")
 end
