@@ -20,7 +20,7 @@ def balanced_string_split(s)
       l_count = 0 #Don't forget to reset the count.
     end
 
-    checker += 1
+    checker += 1 #(no need to write it twice)
   end
 
   return num_output
