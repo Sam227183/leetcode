@@ -1,5 +1,5 @@
 def find_words_containing(words, x)
-  #loop condition
+  #while loop version
   counter = 0
   buffer = []
   
@@ -12,6 +12,17 @@ def find_words_containing(words, x)
     counter += 1
   end
   return buffer
+end
+
+# do loop version
+def find_words_containing(words, x)
+  buffer = []
+
+  words.each_with_index do |word, index|
+    buffer << index if word.include?(x)
+  end
+
+  buffer
 end
 
 # Test Driven Development
