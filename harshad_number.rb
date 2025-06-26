@@ -28,3 +28,17 @@ puts sum_of_the_digits_of_harshad_number(18)
 puts sum_of_the_digits_of_harshad_number(23)
 puts sum_of_the_digits_of_harshad_number(7)
 puts sum_of_the_digits_of_harshad_number(100) 
+
+def sum_of_the_digits_of_harshad_number(x)
+  sum_of_digits = x.digits.sum
+
+  if x % sum_of_digits == 0
+    return sum_of_digits
+  else
+    return -1
+  end
+end
+
+# Test Driven Development
+puts sum_of_the_digits_of_harshad_number(18)
+puts sum_of_the_digits_of_harshad_number(23)
