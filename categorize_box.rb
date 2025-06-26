@@ -25,4 +25,57 @@ end
 # Test Driven Development
 puts categorize_box(1000, 35, 700, 300)
 puts categorize_box(200, 50, 800, 50)
+
+# 2nd time answer
+
+def categorize_box(length, width, height, mass)
+
+  def bulky_check(length, width, height)
+   volume = length * width * height
+    if (length >= 10**4 || width >= 10**4 || height >= 10**4) || volume >= 10**9
+      return "Bulky"
+    end
+  end
+
+  def heavy_check(mass)
+    if mass >= 100
+      return "Heavy"
+    end
+  end
+
+  if bulky_check(length, width, height) == "Bulky" && heavy_check(mass) == "Heavy"
+    return "Both"
+  elsif bulky_check(length, width, height) != "Bulky" && heavy_check(mass) != "Heavy"
+    return "Neither"
+  elsif bulky_check(length, width, height) == "Bulky"
+    return "Bulky"
+  elsif heavy_check(mass) == "Heavy"
+    return "Heavy"
+  end
+end
+
+# Refactored answer
+def categorize_box(length, width, height, mass)
+
+  def bulky_check(length, width, height)
+    volume = length * width * height
+    length >= 10**4 || width >= 10**4 || height >= 10**4 || volume >= 10**9
+  end
+
+  def heavy_check(mass)
+    mass >= 100
+  end
+
+  # using Boolean condition
+  bulky = bulky_check(length, width, height)
+  heavy = heavy_check(mass)
+
+  return "Both" if bulky && heavy
+  return "Bulky" if bulky
+  return "Heavy" if heavy
+  "Neither"
+end
+
+# Test Driven Development
 puts categorize_box(1000, 35, 700, 300)
+puts categorize_box(200, 50, 800, 50)
