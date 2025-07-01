@@ -1,6 +1,5 @@
 # https://leetcode.com/problems/count-of-matches-in-tournament/description/
 
-
 def number_of_matches(n)
   looping_var = n
 
@@ -21,10 +20,26 @@ def number_of_matches(n)
   return match_counter
 end
 
-
-
 # Test driven development
 puts number_of_matches(7)
 puts number_of_matches(14) 
 
+# 2nd try
+def number_of_matches(n)
+  match_counter = []
 
+  while n > 1
+    if n.odd?
+      match_counter << (n - 1)/2 
+      n = (n - 1)/2 + 1
+     elsif n.even?
+      n = n / 2
+      match_counter << n
+      end
+  end
+  return match_counter.sum
+end
+
+# Test driven development
+puts number_of_matches(7)
+puts number_of_matches(14) 
