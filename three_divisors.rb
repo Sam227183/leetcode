@@ -59,5 +59,27 @@ end
   
 end
 
+#2nd try
 
-puts is_four(10)
+def is_three(n)
+  # 1. Edge case
+  return false if n < 4
+
+  # 2. Premise: 1 and n itself will always be divisors.
+  # Therefore, all I need to find is only 1 more divisor.
+  divisor_counter = 2
+  m = 2
+
+  while m < n
+    if n % m == 0
+      divisor_counter += 1
+    end
+    m += 1
+  end
+
+  return true if divisor_counter == 3
+end
+
+# Test driven development
+puts is_three(2)
+puts is_three(4)
