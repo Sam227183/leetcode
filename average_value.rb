@@ -22,11 +22,37 @@ def even_and_three(nums)
   return select_arr
 end
 
-#using select method
-# return nums.select{|element| element % 6 == 0}
+# using select method
+return nums.select{|element| element % 6 == 0}
 
 # Test driven development
-# puts even_and_three([1,3,6,10,12,15])
+puts even_and_three([1,3,6,10,12,15])
 puts average_value([1,3,6,10,12,15])
-# even_and_three([1,2,4,7,10])
+puts even_and_three([1,2,4,7,10])
+puts average_value([1,2,4,7,10])
+
+# 2nd try
+
+def average_value(nums)
+  final_arr = even_and_three(nums)
+
+  if final_arr.size == 0
+   return 0
+  else
+   return final_arr.sum / final_arr.length
+  end
+end
+
+def even_and_three(nums)
+  buffer = []
+  nums.each do |e| 
+    if e % 6 == 0 
+      buffer << e
+    end
+  end
+  return buffer
+end
+
+# Test driven development
+puts average_value([1,3,6,10,12,15])
 puts average_value([1,2,4,7,10])
