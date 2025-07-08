@@ -30,3 +30,21 @@ end
 # puts triangle_condition([1,2,1,10])
 puts largest_perimeter([2,1,2])
 puts largest_perimeter([1,2,1,10])
+
+# 2nd try
+
+def largest_perimeter(nums)
+  arr = nums.max(3)
+  
+  if arr[0] + arr[1] > arr[2] && 
+  arr[1] + arr[2] > arr[0] && 
+  arr[0] + arr[2] > arr[1] == true
+    return arr.sum
+  else
+    return 0
+  end
+end
+
+# Test Driven Development
+puts largest_perimeter([2,1,2])
+puts largest_perimeter([1,2,1,10])
