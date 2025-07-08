@@ -31,3 +31,21 @@ end
 # Test driven development
 puts winning_player(2, 7) 
 puts winning_player(4, 11)
+
+# 2nd try
+
+def winning_player(x, y)
+  turn_counter = 0
+
+  while x >= 1 && y >= 4
+    x = x - 1
+    y = y - 4
+    turn_counter += 1
+  end
+  return "Bob" if turn_counter.even?
+  return "Alice" if turn_counter.odd?
+end
+
+# Test driven development
+puts winning_player(2, 7) 
+puts winning_player(4, 11)
