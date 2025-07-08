@@ -20,3 +20,15 @@ end
 # Test Driven Development
 puts subtract_product_and_sum(234)
 puts subtract_product_and_sum(4421)
+
+# 2nd try
+def subtract_product_and_sum(n)
+  product = n.digits.inject(:*)
+  sum = n.digits.sum
+
+  return product - sum
+end
+
+# Test Driven Development
+puts subtract_product_and_sum(234)
+puts subtract_product_and_sum(4421)
