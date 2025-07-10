@@ -1,13 +1,13 @@
 # https://leetcode.com/problems/length-of-last-word/description/
 
-# def length_of_last_word(s)
-#   return s.split(' ').last.length
-# end
+def length_of_last_word(s)
+  return s.split(' ').last.length
+end
 
-# # Test Driven Development
-# puts length_of_last_word("Hello World")
-# puts length_of_last_word("   fly me   to   the moon  ")
-# puts length_of_last_word("luffy is still joyboy")
+# Test Driven Development
+puts length_of_last_word("Hello World")
+puts length_of_last_word("   fly me   to   the moon  ")
+puts length_of_last_word("luffy is still joyboy")
 
 def length_of_last_word_2 str
   length = str.length
@@ -30,3 +30,29 @@ end
 puts length_of_last_word_2("   fly me   to   the moon  ")
 puts length_of_last_word_2("luffy is still  joyboy")
 puts length_of_last_word_2("Hello World")
+
+# 2nd try
+
+def length_of_last_word(s)
+  s = s.reverse
+ 
+  counter = 0
+  checker = 0
+
+  while checker < s.length
+    if s[checker] == ' ' && counter == 0
+      checker += 1
+    elsif s[checker] != ' '
+      counter += 1
+      checker += 1
+    else
+      break
+    end
+  end
+  return counter
+end
+
+# Test Driven Development
+puts length_of_last_word("   fly me   to   the moon  ")
+puts length_of_last_word("luffy is still  joyboy")
+puts length_of_last_word("Hello World")
