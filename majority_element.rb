@@ -8,3 +8,14 @@ end
 # Test Driven Development
 puts majority_element([3,2,3])
 puts majority_element([2,2,1,1,1,2,2])
+
+# 2nd try (Jar Analogy)
+
+def majority_element(nums)
+  n = nums.length
+  return nums.sort[n / 2]
+end
+
+# Test Driven Development
+puts majority_element([3,2,3])
+puts majority_element([2,2,1,1,1,2,2])
