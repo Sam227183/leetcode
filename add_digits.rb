@@ -17,6 +17,23 @@ def add_digits(num)
   return looping_var
 end
 
+# Test Driven Development
+puts add_digits(38)
+puts add_digits(0)
+
+# 2nd try
+
+def add_digits(num)
+  #1. Edge case
+  return 0 if num == 0
+  #2. General cases - using loop
+  while num.to_s.length > 1
+    if num.to_s.length >= 2 
+      num = num.digits.sum
+    end
+  end
+  return num
+end
 
 # Test Driven Development
 puts add_digits(38)
