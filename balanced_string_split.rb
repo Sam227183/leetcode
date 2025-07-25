@@ -30,3 +30,32 @@ end
 puts balanced_string_split("RLRRLLRLRL")
 puts balanced_string_split("RLRRRLLRLL")
 puts balanced_string_split("LLLLRRRR")
+
+#2nd try
+
+def balanced_string_split(s)
+  l_check = []
+  r_check = []
+  checker = 0
+  output = 0
+
+  while checker < s.length
+    if s[checker] == "R"
+      r_check << s[checker]
+    elsif s[checker] == "L"
+      l_check << s[checker]
+    end
+    checker += 1
+    if l_check.length == r_check.length
+      output += 1
+      l_check = []
+      r_check = []
+    end
+  end
+  return output
+end
+
+#Test Driven Development
+puts balanced_string_split("RLRRLLRLRL")
+puts balanced_string_split("RLRRRLLRLL")
+puts balanced_string_split("LLLLRRRR")
